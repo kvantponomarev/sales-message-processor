@@ -10,8 +10,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 })
 public class SaleMessage {
 
-    private String product;
-    private double value;
+    protected String product;
+    protected double price;
 
     public String getProduct() {
         return product;
@@ -21,11 +21,19 @@ public class SaleMessage {
         this.product = product;
     }
 
-    public double getValue() {
-        return value;
+    public double getPrice() {
+        return price;
     }
 
-    public void setValue(double value) {
-        this.value = value;
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "SaleHistory{" +
+                "product=" + product +
+                ", price=" + price +
+                '}';
     }
 }

@@ -26,8 +26,8 @@ public class SaleDetails {
         this.totalValue = totalValue;
     }
 
-    public void addSalesInformation(long count, double value) {
-        this.numberOfSales += count;
-        this.totalValue += value;
+    public void addSalesInformation(long numberOfSales, double price) {
+        this.numberOfSales += numberOfSales;
+        this.totalValue += (numberOfSales * price);
     }
 }

@@ -16,6 +16,7 @@ public class MessageAggregator {
 
     private final Map<String, SaleDetails> productToSaleDetails = new HashMap<String, SaleDetails>();
     private final Map<String, List<SaleMessage>> messages = new HashMap<String, List<SaleMessage>>();
+    private final Map<String, List<SaleHistory>> saleHistories = new HashMap<String, List<SaleHistory>>();
 
     public void processMessage(SaleMessage saleMessage) {
 
@@ -36,18 +37,21 @@ public class MessageAggregator {
         if (saleMessage instanceof BulkSaleMessage) {
             BulkSaleMessage bulkSaleMessage = (BulkSaleMessage) saleMessage;
             if (!productToSaleDetails.containsKey(product)) {
-                productToSaleDetails.put(product, new SaleDetails(bulkSaleMessage.getNumberOfSales(), bulkSaleMessage.getValue()));
+                productToSaleDetails.put(product, new SaleDetails(bulkSaleMessage.getNumberOfSales(), bulkSaleMessage.getPrice()));
             } else {
-                productToSaleDetails.get(product).addSalesInformation(bulkSaleMessage.getNumberOfSales(), bulkSaleMessage.getValue());
+                productToSaleDetails.get(product).addSalesInformation(bulkSaleMessage.getNumberOfSales(), bulkSaleMessage.getPrice());
             }
         } else if(saleMessage instanceof AdjustmentSaleMessage) {
             AdjustmentSaleMessage adjustmentSaleMessage = (AdjustmentSaleMessage) saleMessage;
+            if (saleHistories.containsKey(product)) {
+                saleHistories
+            }
 
         } else {
             if (!productToSaleDetails.containsKey(product)) {
-                productToSaleDetails.put(product, new SaleDetails(1, saleMessage.getValue()));
+                productToSaleDetails.put(product, new SaleDetails(1, saleMessage.getPrice()));
             } else {
-                productToSaleDetails.get(product).addSalesInformation(1, saleMessage.getValue());
+                productToSaleDetails.get(product).addSalesInformation(1, saleMessage.getPrice());
             }
         }
 
