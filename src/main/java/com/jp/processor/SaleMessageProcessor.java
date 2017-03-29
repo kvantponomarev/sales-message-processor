@@ -5,27 +5,34 @@ import com.jp.aggregator.MessageAggregator;
 import com.jp.message.SaleMessage;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
 
 public class SaleMessageProcessor implements MessageProcessor {
 
-    private final static int NUMBER_OF_MESSAGES_TO_PRINT_REPORT = 10;
-    private final static int NUMBER_OF_MESSAGES_TO_STOP = 50;
+    private final int numberOfMessagesToPrintReport;
+    private final int numberOfMessagesToStop;
     private final MessageAggregator messageAggregator;
+    private final String fileName;
+
     private int numberOfMessages;
 
-    public SaleMessageProcessor(MessageAggregator messageAggregator) {
+    public SaleMessageProcessor(int numberOfMessagesToPrintReport,
+                                int numberOfMessagesToStop,
+                                MessageAggregator messageAggregator,
+                                String fileName) {
+        this.numberOfMessagesToPrintReport = numberOfMessagesToPrintReport;
+        this.numberOfMessagesToStop = numberOfMessagesToStop;
         this.messageAggregator = messageAggregator;
+        this.fileName = fileName;
     }
 
-    public void process(String fileName) {
-        File salesNotificationsFile = openFile(fileName);
-        Scanner scanner = null;
+    public void run() throws IOException {
+        File salesNotificationsFile = openFile();
         ObjectMapper mapper = new ObjectMapper();
-
+        Scanner scanner = null;
         try {
-
             scanner = new Scanner(salesNotificationsFile);
 
             while (scanner.hasNextLine()) {
@@ -34,12 +41,13 @@ public class SaleMessageProcessor implements MessageProcessor {
                 try {
                     this.messageAggregator.aggregateMessage(saleMessage);
                     this.numberOfMessages++;
-                    if (numberOfMessages % NUMBER_OF_MESSAGES_TO_PRINT_REPORT == 0) {
+                    if (numberOfMessages % numberOfMessagesToPrintReport == 0) {
                        this.messageAggregator.printReport();
                     }
-                    if (numberOfMessages == NUMBER_OF_MESSAGES_TO_STOP) {
+                    if (numberOfMessages == numberOfMessagesToStop) {
+                        System.out.println("Stop accepting messages\n");
                         this.messageAggregator.printAdjustmentReport();
-                       return;
+                        return;
                     }
                 }
                 catch(Exception e) {
@@ -47,9 +55,6 @@ public class SaleMessageProcessor implements MessageProcessor {
                     e.printStackTrace();
                 }
             }
-
-        } catch (Exception e) {
-            e.printStackTrace();
         } finally {
             if(scanner != null) {
                 scanner.close();
@@ -57,21 +62,16 @@ public class SaleMessageProcessor implements MessageProcessor {
         }
     }
 
-    /**
-     * Opens a file specified by fileName
-     * @param fileName File Name
-     * @return File
-     */
-    private File openFile(String fileName) {
+    private File openFile() {
 
-        if(fileName == null || fileName.isEmpty()) {
-            throw new IllegalArgumentException("Incorrect input file name " + fileName);
+        if(this.fileName == null || this.fileName.isEmpty()) {
+            throw new IllegalArgumentException("Incorrect input file name " + this.fileName);
         }
 
-        URL url = getClass().getClassLoader().getResource(fileName);
+        URL url = getClass().getClassLoader().getResource(this.fileName);
 
         if(url == null) {
-            throw new IllegalArgumentException("Can't open file " + fileName);
+            throw new IllegalArgumentException("Can't open file " + this.fileName);
         }
 
         return new File(url.getFile());

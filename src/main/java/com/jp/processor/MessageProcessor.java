@@ -1,5 +1,7 @@
 package com.jp.processor;
 
+import java.io.IOException;
+
 public interface MessageProcessor {
-    void process(String fileName);
+    void run() throws IOException;
 }

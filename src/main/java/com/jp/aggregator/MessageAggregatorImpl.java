@@ -15,10 +15,15 @@ import java.util.Map;
 
 public class MessageAggregatorImpl implements MessageAggregator {
 
-    private final static String reportFormat = "Product: {0}\tNumber of Sales: {1}\tTotal Value: {2}";
+    private final static String reportFormat = "Product: {0} Number of Sales: {1} Total Value: {2}";
 
-    private final Map<String, List<Sale>> sales = new HashMap<>();
-    private final List<SaleMessage> messagesLog = new ArrayList<>();
+    private final Map<String, List<Sale>> sales;
+    private final List<SaleMessage> messagesLog;
+
+    public MessageAggregatorImpl() {
+        this.sales = new HashMap<>();
+        this.messagesLog = new ArrayList<>();
+    }
 
     public void aggregateMessage(SaleMessage saleMessage) {
 
@@ -39,7 +44,7 @@ public class MessageAggregatorImpl implements MessageAggregator {
             sales.put(product, new ArrayList<>());
         }
 
-        Sale sale = null;
+        Sale sale;
 
         if(saleMessage instanceof BulkSaleMessage) {
             sale = new Sale(product, ((BulkSaleMessage)saleMessage).getNumberOfSales(), saleMessage.getPrice());
@@ -62,7 +67,8 @@ public class MessageAggregatorImpl implements MessageAggregator {
     }
 
     public void printReport() {
-        for (String product : sales.keySet()) {
+        System.out.println("Sales Report:\n");
+        sales.keySet().forEach( product -> {
             long totalNumberOfSales = 0;
             double totalValue = 0;
             List<Sale> listOfSales = sales.get(product);
@@ -71,15 +77,15 @@ public class MessageAggregatorImpl implements MessageAggregator {
                 totalValue += sale.getTotalAdjustedValue();
             }
             System.out.println(MessageFormat.format(reportFormat, product, totalNumberOfSales, totalValue));
-        }
+        });
+        System.out.println("\n\n");
     }
 
     public void printAdjustmentReport() {
-        for (String product : sales.keySet()) {
+        System.out.println("Adjustment Report:\n");
+        sales.keySet().forEach( product -> {
             List<Sale> listOfSales = sales.get(product);
-            for (Sale sale : listOfSales) {
-                System.out.println(sale);
-            }
-        }
+            listOfSales.forEach(System.out::println);
+        });
     }
 }
