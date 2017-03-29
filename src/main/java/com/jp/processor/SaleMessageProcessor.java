@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
 
+/**
+ * MessageProcessor Implementation that reads sales notification messages from file.
+ */
 public class SaleMessageProcessor implements MessageProcessor {
 
     private final int numberOfMessagesToPrintReport;
@@ -16,6 +19,7 @@ public class SaleMessageProcessor implements MessageProcessor {
     private final MessageAggregator messageAggregator;
     private final String fileName;
 
+    //Counter of incoming messages
     private int numberOfMessages;
 
     public SaleMessageProcessor(int numberOfMessagesToPrintReport,
@@ -28,6 +32,12 @@ public class SaleMessageProcessor implements MessageProcessor {
         this.fileName = fileName;
     }
 
+    /**
+     * Process sales notifications from file.
+     * After every numberOfMessagesToPrintReport prints sales report.
+     * After numberOfMessagesToStop stops and print adjustment report.
+     * @throws IOException
+     */
     public void run() throws IOException {
         File salesNotificationsFile = openFile();
         ObjectMapper mapper = new ObjectMapper();
@@ -62,6 +72,11 @@ public class SaleMessageProcessor implements MessageProcessor {
         }
     }
 
+    /**
+     * Opens File that is specified by fileName.
+     * If the file is not exists, or fileName is null or empty - IllegalArgumentException will be thrown
+     * @return File object
+     */
     private File openFile() {
 
         if(this.fileName == null || this.fileName.isEmpty()) {

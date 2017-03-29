@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="12" failures="0" name="com.jp.aggregator.MessageAggregatorImplTest" time="0.134" errors="0" skipped="0">
+<testsuite tests="12" failures="0" name="com.jp.aggregator.MessageAggregatorImplTest" time="0.13" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="15.0.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -11,7 +11,7 @@
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="idea.launcher.port" value="7538"/>
+    <property name="idea.launcher.port" value="7536"/>
     <property name="user.script" value=""/>
     <property name="user.country" value="RU"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
@@ -63,7 +63,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.jp.aggregator.MessageAggregatorImplTest" name="testAdjustmentAddOnSimpleSaleMessage" time="0.05"/>
+  <testcase classname="com.jp.aggregator.MessageAggregatorImplTest" name="testAdjustmentAddOnSimpleSaleMessage" time="0.048"/>
   <testcase classname="com.jp.aggregator.MessageAggregatorImplTest" name="testAggregateSimpleSaleMessage" time="0"/>
   <testcase classname="com.jp.aggregator.MessageAggregatorImplTest" name="testAdjustmentAddOnBulkSaleMessage" time="0"/>
   <testcase classname="com.jp.aggregator.MessageAggregatorImplTest" name="testAdjustmentSubtractOnSimpleSaleMessage" time="0"/>
@@ -73,6 +73,6 @@
   <testcase classname="com.jp.aggregator.MessageAggregatorImplTest" name="testAggregateBulkSaleMessage" time="0"/>
   <testcase classname="com.jp.aggregator.MessageAggregatorImplTest" name="testAdjustmentOnDifferentProduct" time="0"/>
   <testcase classname="com.jp.aggregator.MessageAggregatorImplTest" name="testNullMessage" time="0"/>
-  <testcase classname="com.jp.aggregator.MessageAggregatorImplTest" name="testAdjustmentMultiplyOnBulkSaleMessage" time="0.001"/>
+  <testcase classname="com.jp.aggregator.MessageAggregatorImplTest" name="testAdjustmentMultiplyOnBulkSaleMessage" time="0"/>
   <testcase classname="com.jp.aggregator.MessageAggregatorImplTest" name="testAdjustmentSubtractOnBulkSaleMessage" time="0"/>
 </testsuite>

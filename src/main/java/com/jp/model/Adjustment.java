@@ -1,5 +1,8 @@
 package com.jp.model;
 
+/**
+ * Represents adjustment. It has an adjustment operation and a value.
+ */
 public class Adjustment {
 
     private final AdjustmentOperation operation;
@@ -21,6 +24,11 @@ public class Adjustment {
         return value;
     }
 
+    /**
+     * Adjust priceBeforeAdjustment based on AdjustmentOperation and value
+     * @param priceBeforeAdjustment Price that should be adjusted
+     * @return adjusted price
+     */
     public double adjustPrice(double priceBeforeAdjustment) {
         return this.operation.adjust(priceBeforeAdjustment, value);
     }

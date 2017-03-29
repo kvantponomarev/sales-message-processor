@@ -17,7 +17,9 @@ public class MessageAggregatorImpl implements MessageAggregator {
 
     private final static String reportFormat = "Product: {0} Number of Sales: {1} Total Value: {2}";
 
+    //Sales grouped by product
     private final Map<String, List<Sale>> sales;
+    //Raw messages
     private final List<SaleMessage> messagesLog;
 
     public MessageAggregatorImpl() {
