@@ -11,13 +11,4 @@ public class BulkSaleMessage extends SaleMessage {
     public void setNumberOfSales(long numberOfSales) {
         this.numberOfSales = numberOfSales;
     }
-
-    @Override
-    public String toString() {
-        return "BulkSale{" +
-                "product=" + product +
-                ", price=" + price +
-                ", numberOfSales = " + numberOfSales +
-                '}';
-    }
 }
