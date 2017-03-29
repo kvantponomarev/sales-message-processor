@@ -10,7 +10,12 @@ public enum AdjustmentOperation {
     SUBTRACT {
         @Override
         public double adjust(double priceBeforeAdjustment, double value) {
-            return priceBeforeAdjustment - value;
+            double result = priceBeforeAdjustment - value;
+            if (result < 0) {
+                throw new RuntimeException("Incorrect Adjustment, price can't be below zero");
+            }
+
+            return result;
         }
     },
     MULTIPLY {

@@ -88,4 +88,8 @@ public class MessageAggregatorImpl implements MessageAggregator {
             listOfSales.forEach(System.out::println);
         });
     }
+
+    public Map<String, List<Sale>> getSales() {
+        return this.sales;
+    }
 }

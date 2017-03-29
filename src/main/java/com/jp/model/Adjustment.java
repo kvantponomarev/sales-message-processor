@@ -6,6 +6,9 @@ public class Adjustment {
     private final double value;
 
     public Adjustment(AdjustmentOperation operation, double value) {
+        if (operation == null) {
+            throw new IllegalArgumentException("Operation can't be null for Adjustment");
+        }
         this.operation = operation;
         this.value = value;
     }
