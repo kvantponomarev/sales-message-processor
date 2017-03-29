@@ -1,0 +1,10 @@
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "banana", "price" : "20"}
+{"@type" : "BulkSaleMessage", "product" : "apple", "price" : "10", "numberOfSales" : "20"}
+{"@type" : "BulkSaleMessage", "product" : "banana", "price" : "20", "numberOfSales" : "20"}
+{"@type" : "AdjustmentSaleMessage", "product" : "apple", "price" : "5", "adjustmentOperation" : "ADD"}
+{"@type" : "AdjustmentSaleMessage", "product" : "banana", "price" : "5", "adjustmentOperation" : "ADD"}
+{"@type" : "AdjustmentSaleMessage", "product" : "apple", "price" : "2", "adjustmentOperation" : "SUBTRACT"}
+{"@type" : "AdjustmentSaleMessage", "product" : "banana", "price" : "2", "adjustmentOperation" : "SUBTRACT"}
+{"@type" : "AdjustmentSaleMessage", "product" : "apple", "price" : "2", "adjustmentOperation" : "MULTIPLY"}
+{"@type" : "AdjustmentSaleMessage", "product" : "banana", "price" : "2", "adjustmentOperation" : "MULTIPLY"}

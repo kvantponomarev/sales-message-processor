@@ -1,0 +1,50 @@
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "BulkSaleMessage", "product" : "apple", "price" : "10", "numberOfSales" : "20"}
+{"@type" : "AdjustmentSaleMessage", "product" : "apple", "price" : "10", "adjustmentOperation" : "ADD"}
+{"@type" : "SaleMessage", "product" : "banana", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "banana", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "banana", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "banana", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "banana", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "banana", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "banana", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "banana", "price" : "10"}
+{"@type" : "BulkSaleMessage", "product" : "apple", "price" : "10", "numberOfSales" : "20"}
+{"@type" : "AdjustmentSaleMessage", "product" : "apple", "price" : "2", "adjustmentOperation" : "MULTIPLY"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "BulkSaleMessage", "product" : "apple", "price" : "10", "numberOfSales" : "20"}
+{"@type" : "AdjustmentSaleMessage", "product" : "apple", "price" : "5", "adjustmentOperation" : "SUBTRACT"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "BulkSaleMessage", "product" : "apple", "price" : "10", "numberOfSales" : "20"}
+{"@type" : "AdjustmentSaleMessage", "product" : "apple", "price" : "10", "adjustmentOperation" : "ADD"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "SaleMessage", "product" : "apple", "price" : "10"}
+{"@type" : "BulkSaleMessage", "product" : "apple", "price" : "10", "numberOfSales" : "20"}
+{"@type" : "AdjustmentSaleMessage", "product" : "apple", "price" : "10", "adjustmentOperation" : "ADD"}

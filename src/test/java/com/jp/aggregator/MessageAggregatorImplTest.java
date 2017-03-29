@@ -84,7 +84,7 @@ public class MessageAggregatorImplTest {
         testAdjustmentOnSimpleSaleMessage(AdjustmentOperation.SUBTRACT, 10, 5, 5);
     }
 
-    public void testAdjustmentOnSimpleSaleMessage(AdjustmentOperation adjustmentOperation, double initialPrice, double adjustedValue, double expectedAdjustedPrice) {
+    private void testAdjustmentOnSimpleSaleMessage(AdjustmentOperation adjustmentOperation, double initialPrice, double adjustedValue, double expectedAdjustedPrice) {
 
         SaleMessage saleMessage = new SaleMessage();
         saleMessage.setPrice(initialPrice);
@@ -135,7 +135,7 @@ public class MessageAggregatorImplTest {
         testAdjustmentOnBulkSaleMessage(AdjustmentOperation.SUBTRACT, 10, 20, 5, 5);
     }
 
-    public void testAdjustmentOnBulkSaleMessage(AdjustmentOperation adjustmentOperation,
+    private void testAdjustmentOnBulkSaleMessage(AdjustmentOperation adjustmentOperation,
                                                 double initialPrice,
                                                 long numberOfSales,
                                                 double adjustedValue,
